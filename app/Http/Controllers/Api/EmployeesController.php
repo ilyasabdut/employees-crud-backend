@@ -22,6 +22,7 @@ class EmployeesController extends Controller
         $employees = DB::table('positions')->get()->toJson(JSON_PRETTY_PRINT);
         return response($employees, 200);
     }
+    
     public function createEmployees(Request $request) {
         $employees = new Employees;
         $employees->name = $request->name;

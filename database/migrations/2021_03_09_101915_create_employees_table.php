@@ -19,7 +19,7 @@ class CreateEmployeesTable extends Migration
             $table->date('birth_date')->nullable(false);
             $table->unsignedInteger('position_id');
             $table->foreign('position_id')->references('id')->on('positions');
-            $table->integer('id_number')->nullable(false);
+            $table->integer('id_number')->unique()->nullable(false);
             $table->integer('gender')->nullable(false);
             $table->integer('is_delete')->nullable(false);
             $table->timestamps();
